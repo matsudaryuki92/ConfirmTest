@@ -17,10 +17,9 @@ class ContactController extends Controller
         $contact = $request->only('first_name', 'last_name', 'gender', 'email', 'tel1', 'tel2', 'tel3','address', 'building', 'category_id', 'detail');
 
         $genderCheck = [
-            0 => '男性',
-            1 => '女性',
-            2 => 'その他',
-
+            1 => '男性',
+            2 => '女性',
+            3 => 'その他',
         ];
 
          $category_name = [
@@ -33,12 +32,13 @@ class ContactController extends Controller
 
         $contact['gender'] = $genderCheck[$contact['gender']] ?? '未設定';
         $contact['category_id'] = $category_name[$contact['category_id']] ?? '未設定';
+        $contact['tel'] = $request->tel1 . '-' . $request->tel2 . '-' . $request->tel3;;
         return view('confirm', compact('contact'));
     }
 
     public function store(Request $request)
     {
-        $contact = $request->only('first_name', 'last_name', 'gender', 'email', 'tel1', 'tel2', 'tel3','address', 'building', 'category_id', 'detail');
+        $contact = $request->only('first_name', 'last_name', 'gender', 'email', 'tel','address', 'building', 'category_id', 'detail');
         Contact::create($contact);
         return view('thanks');
     }
