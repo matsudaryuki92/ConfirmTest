@@ -34,7 +34,7 @@
           <div class="form__group-content">
             <div class="form__input--text">
               <input type="text" name="first_name" placeholder="例:山田" value=""/>
-            <input type="text" name="last_name" placeholder="例:太郎" />
+              <input type="text" name="last_name" placeholder="例:太郎" />
             </div>
             <div class="form__error">
               <!--バリデーション機能を実装したら記述します。-->
@@ -48,11 +48,11 @@
           </div>
           <div class="form__group-content">
             <div class="form__input--text">
-              <input type="radio" name="gender" id="men" value="0"/>
+              <input type="radio" name="gender" id="men" value="1"/>
               <label for="men">男性</label>
-              <input type="radio" name="gender" id="women" value="1"/>
+              <input type="radio" name="gender" id="women" value="2"/>
               <label for="women">女性</label>
-              <input type="radio" name="gender" id="other" value="2"/>
+              <input type="radio" name="gender" id="other" value="3"/>
               <label for="other">その他</label>
             </div>
             <div class="form__error">
@@ -126,7 +126,7 @@
           <div class="form__group-content">
             <div class="form__input--text">
               <select name="category_id" id="">
-                <option value="" disabled selected>選択してください</option>
+                <option disabled selected>選択してください</option>
                 <option value="1">商品のお届けについて</option>
                 <option value="2">商品の交換について</option>
                 <option value="3">商品トラブル</option>
