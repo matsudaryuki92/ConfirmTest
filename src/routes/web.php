@@ -20,7 +20,18 @@ Route::get('/', [ContactController::class, 'index']);
 Route::post('/confirm', [ContactController::class, 'confirm']);
 Route::post('/thanks', [ContactController::class, 'store']);
 
+//guest
+Route::middleware('guest')->group(function (){
+    Route::get('/register', [AuthController::class, 'register'])->name('register');
+    Route::post('/register', [AuthController::class, 'registerUser']);
+
+    Route::get('/login', [AuthController::class, 'login'])->name('login');
+    Route::post('/login', [AuthController::class, 'loginUser']);
+});
+
 //Auth
 Route::middleware('auth')->group(function (){
-    Route::get('/register', [AuthController::class, 'index']);
+    Route::get('/admin', function() {
+        return view('admin');
+    })->name('admin');
 });

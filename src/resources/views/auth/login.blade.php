@@ -46,7 +46,7 @@
     </div>
   </form>
   <div class="register__link">
-    <a class="register__button-submit" href="/register">新規登録</a>
+    <a class="register__button-submit" href="register">新規登録</a>
   </div>
 </div>
 @endsection
