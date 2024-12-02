@@ -28,7 +28,8 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::post('/admin', [AuthController::class, 'admin'])->name('admin');
 
 Route::get('/admin', [AdminController::class, 'index']);
-
+Route::get('/search', [AdminController::class, 'find']);
+Route::post('/search', [AdminController::class, 'search']);
 
 // Route::post('/admin', [AuthController::class, 'admin']);
 
