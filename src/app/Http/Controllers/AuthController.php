@@ -29,11 +29,8 @@ class AuthController extends Controller
         return view('auth/login');
     }
 
-    public function loginUser(AuthRequest $request)
+    public function admin()
     {
-        $user = $request->only('email', 'password');
-        
-
-        return redirect()->route('auth/admin');
+        return view('auth/admin');
     }
 }
